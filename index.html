@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myNachiketa</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo/favicon-16x16.png">
+    <link rel="manifest" href="../logo/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./mynachiketa.css">
+
+    <!-- chatbot -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style></style>
+    <link rel="stylesheet" href="./chatbot_style.css"> <!--CSS FILE-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="./images/logo.png" alt="myNachiketa Logo" style="height: 60px;">
+        <nav>
+            <a href="https://github.com/shivsharcode" target="_blank">Books</a>
+            <a href="https://github.com/shivsharcode" target="_blank">Gita Class</a>
+            <a href="https://github.com/shivsharcode" target="_blank">Blogs</a>
+            <a href="https://github.com/shivsharcode" target="_blank">Moral Stories</a>
+            <a href="https://github.com/shivsharcode" target="_blank">Gita Scholars 2024</a>
+            <a href="https://github.com/shivsharcode" target="_blank"><span style="color:red;font-size:1.5em;">🛒</span></a>
+        </nav>
+    </header>
+
+    <div class="main-section">
+        <img src="./images/elephant.png" alt="Children with Elephant" style="max-width: 500px; height: auto;">
+        <div class="main-text">
+            <h1>myNachiketa</h1>
+            <h2>Gita Concepts for Children</h2>
+            <p>
+                We aim to bring the philosophical ideas and concepts in Hinduism to children in simple, fun and creative
+                ways.
+            </p>
+            <button class="discover-btn" onclick="window.open('https://github.com/shivsharcode', '_blank')">Discover</button>
+        </div>
+    </div>
+
+    <!-- ------------------------CHATBOT------------------------ -->
+    <button id="chatbot-button" class="p-2">
+        <img src="./images/robo.png" alt="Chatbot" class="w-10 h-10">
+    </button>
+    <div id="chat-container" class="hidden">
+        <div id="chat-header">Chat with Vedputra</div>
+        <button id="close-button" class="material-symbols-rounded">close</button>
+        <div id="chat-messages"></div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type your message..." />
+            <button id="send-button" class="material-symbols-rounded">send</button>
+        </div>
+    </div>
+    <!-- ------------------------------CHATBOT END--------------------- -->
+
+    <footer>
+        <div class="footer-logo-section">
+            <img src="./images/logo.png" alt="Footer Logo" style="height: 50px;">
+            <p>© 2023 by myNachiketa Knowledge Foundation™</p>
+            <p><a href="mailto:support@mynachiketa.com" style="color:black;">support@mynachiketa.com</a></p>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h3>Our Product</h3>
+                <a href="https://github.com/shivsharcode" target="_blank">Books</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Bestseller</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Return Gift Pack</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Books in Hindi</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Books in English</a>
+            </div>
+            <div>
+                <h3>More</h3>
+                <a href="https://github.com/shivsharcode" target="_blank">Best Moral Stories</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Blogs</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Sunday Gita Class</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Gita Scholars</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Policies</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Articles & Events</a>
+            </div>
+            <div>
+                <h3>Our Company</h3>
+                <a href="https://github.com/shivsharcode" target="_blank">About Us</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Author</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Track your Order</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Careers</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Gita for Kids</a>
+                <a href="https://github.com/shivsharcode" target="_blank">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="./chatbot_script.js"></script>
+
+</html>
