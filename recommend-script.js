@@ -33,6 +33,7 @@ document.getElementById('blog-selector').addEventListener('change', function (ev
 
 // RECOMMEND BUTTON LOGIC
 async function recommendBlogs(){
+    console.log("recommendBlog function called")
     const selector = document.getElementById('blog-selector');
     
     const index = selector.value;
@@ -42,6 +43,7 @@ async function recommendBlogs(){
 
     const blog = blogData[index];
 
+    console.log(`Blog = ${blog.title}`)
     const payload = {
         title: blog.title,
         language: blog.language || "English",
@@ -59,11 +61,15 @@ async function recommendBlogs(){
     });
 
     const data = await response.json()
+    console.log(`Showing first data received \ndata.results[0]`)
     showBlogResults(data.results);
 
 }
 
 async function recommendBooks(){
+
+    console.log("recommendBooks() function is called")
+
     const selector = document.getElementById('blog-selector');
     const index = selector.value;
     if (index=== ""){
@@ -72,6 +78,7 @@ async function recommendBooks(){
 
     const blog = blogData[index]
 
+    console.log(`Blog = ${blog.title}`)
     const payload = {
         title: blog.title,
         language: blog.language || "English",
@@ -88,6 +95,9 @@ async function recommendBooks(){
     });
 
     const data = await response.json()
+
+    console.log(`Data first card = {data.results[0]} `)
+
     showBookResults(data.results)
 
 }
@@ -97,6 +107,10 @@ async function recommendBooks(){
 // ...existing code...
 
 function showBlogResults(results){
+
+    console.log("Showing results for recommended blogs...")
+
+
     const container = document.getElementById('results');
     container.innerHTML = ""; // clear previous results
 
@@ -120,6 +134,9 @@ function showBlogResults(results){
 }
 
 function showBookResults(results){
+
+    console.log("Showing results for recommended books...")
+
     const container = document.getElementById('results');
     container.innerHTML = ""; // clear previous results
 
