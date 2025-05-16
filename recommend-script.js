@@ -50,7 +50,7 @@ async function recommendBlogs(){
         read_time: blog["read_time(mins)"].toString()
     };
 
-    const response = await fetch("http://127.0.0.1:8001/recommendBlogs", {
+    const response = await fetch("https://blogs-books-recommend.onrender.com/recommendBlogs", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -79,7 +79,7 @@ async function recommendBooks(){
         author: blog.author || "myNachiketa"
     }
 
-    const response = await fetch("http://127.0.0.1:8001/recommendBooks", {
+    const response = await fetch("https://blogs-books-recommend.onrender.com/recommendBooks", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

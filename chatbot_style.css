@@ -1,13 +1,13 @@
 body {
     font-family: 'Inter', sans-serif;
 }
-#chat-container {
+.chat-container {
     display: none; /* Initially hidden */
     position: fixed;
     bottom: 80px; /* Adjusted from 20px to leave space for the button */
     right: 20px;
-    width: 350px;
-    max-height: 500px;
+    width: 400px;
+    max-height: 70vh;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,6 +24,74 @@ body {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
+
+#action-btn-container-div{
+    padding: 16px;
+    height: 55vh; /* Adjusted height to ensure scrollbar doesn't overlap input */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid black;
+
+}
+
+/* .action-btns{
+    background-color: #36a9e1;
+    border-radius: 1rem;
+    min-width: 50%;
+    max-width: 50%;
+    height: 3rem;
+    color: whitesmoke;
+}
+.action-btns:hover{
+    background-color: #c9991f;
+    color: rgb(42, 42, 42);
+} */
+
+/* ...existing code... */
+.action-btns{
+    background: linear-gradient(90deg, #36a9e1 0%, #4fd1c5 100%);
+    border-radius: 1.5rem;
+    min-width: 60%;
+    max-width: 80%;
+    height: 3.2rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(54, 169, 225, 0.15);
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    cursor: pointer;
+    padding: 0 1.5rem;
+    outline: none;
+    margin-bottom: 0.5rem;
+}
+.action-btns:hover{
+    background: linear-gradient(90deg, #c9991f 0%, #f6e05e 100%);
+    color: #222;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(201, 153, 31, 0.18);
+}
+
+
+
+#results {
+
+    padding: 18px 10px;     /* Add padding for spacing */
+    overflow-y: auto;       /* Make it vertically scrollable */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;              /* Space between cards */
+    /* box-sizing: border-box; */
+}
+/* ...existing code... */
+
+
+
 #chat-messages {
     padding: 16px;
     height: 320px; /* Adjusted height to ensure scrollbar doesn't overlap input */

@@ -66,15 +66,33 @@
     </button>
 
 
-    <div id="chat-first-container">
-        
+    <div id="chat-first-container" class="hidden chat-container">
+        <div id="chat-header">Chat with Vedputra</div>
+        <button id="close-button" class="material-symbols-rounded">close</button>
+
+        <!-- action buttons -->
+         <div id="action-btn-container-div" class="chat-messages-class">
+            <button onclick="recommendBlogs()" class="action-btns">Read More Blogs</button>
+            <button onclick="recommendBooks()" class="action-btns">Explore Books</button>
+            <button onclick="chatWithAI()" class="action-btns">Talk to Vedputra</button>
+
+            <div id="results"></div>
+         </div>
+
+         
+
+         <!-- <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type your message..." />
+            <button id="send-button" class="material-symbols-rounded">send</button>
+        </div> -->
+
     </div>
 
 
-    <div id="chat-container" class="hidden">
+    <div id="chat-second-container" class="hidden chat-container">
         <div id="chat-header">Chat with Vedputra</div>
         <button id="close-button" class="material-symbols-rounded">close</button>
-        <div id="chat-messages"></div>
+        <div id="chat-messages" class="chat-messages-class"></div>
         <div id="chat-input-area">
             <input type="text" id="chat-input" placeholder="Type your message..." />
             <button id="send-button" class="material-symbols-rounded">send</button>
@@ -84,13 +102,14 @@
 
     
     <!-------------------------- DROPDOWN------------------ -->
-    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow my-10 font-sans">
+    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow my-10 font-sans border-2">
         <h2 class="text-2xl font-bold mb-4 text-center text-yellow-600">SELECT BLOG</h2>
 
         <select name="" id="blog-selector" class="w-full p-2 border rounded mb-4">
             <option value="">-- Choose Blog --</option>
         </select>
     </div>
+
 
     
 
@@ -106,7 +125,6 @@
         <a href="https://vedaputra-backend.onrender.com" target="_blank">https://vedaputra-backend.onrender.com</a>
     </div>
 
-    <div id="results" class="max-w-4xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 px-4" ></div>
 
     <!-- -----------------------NOTE ENDED------------------ -->
 
@@ -149,6 +167,7 @@
     </footer>
 </body>
 
+<script src="./recommend-script.js"></script>
 <script src="./chatbot_script.js"></script>
 
 </html>
