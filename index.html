@@ -56,7 +56,11 @@
             opening this link:<br>
             <!-- <a href="https://vedaputra-backend.onrender.com" target="_blank">https://vedaputra-backend.onrender.com</a> -->
             <button class="discover-btn"
-                onclick="window.open('https://vedaputra-backend.onrender.com', '_blank')">ACTIVATE BACKEND</button>
+                onclick="window.open('https://vedaputra-backend.onrender.com', '_blank')">ACTIVATE BACKEND
+            </button>
+            <button class="discover-btn discover-btn-2"
+                onclick="window.open('https://blogs-books-recommend.onrender.com', '_blank')">ACTIVATE SUGGESTION BACKEND
+            </button>
         </div>
     </div>
 
@@ -71,17 +75,37 @@
         <button id="close-button" class="material-symbols-rounded">close</button>
 
         <!-- action buttons -->
-         <div id="action-btn-container-div" class="chat-messages-class">
+        <div id="action-btn-container-div" class="chat-messages-class">
             <button onclick="recommendBlogs()" class="action-btns">Read More Blogs</button>
             <button onclick="recommendBooks()" class="action-btns">Explore Books</button>
             <button onclick="chatWithAI()" class="action-btns">Talk to Vedputra</button>
 
+            <!-- Loader Spinner (scoped to chatbot area) -->
+            <div id="loader"
+                style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:999;">
+                <div
+                    style="border:8px solid #f3f3f3; border-top:8px solid #1b1913; border-radius:50%; width:60px; height:60px; animation:spin 1s linear infinite;">
+                </div>
+            </div>
+            <style>
+                @keyframes spin {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            </style>
+            <!-- End Loader Spinner -->
+
             <div id="results"></div>
-         </div>
+        </div>
 
-         
 
-         <!-- <div id="chat-input-area">
+
+        <!-- <div id="chat-input-area">
             <input type="text" id="chat-input" placeholder="Type your message..." />
             <button id="send-button" class="material-symbols-rounded">send</button>
         </div> -->
@@ -100,7 +124,7 @@
     </div>
     <!-- ------------------------------CHATBOT END--------------------- -->
 
-    
+
     <!-------------------------- DROPDOWN------------------ -->
     <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow my-10 font-sans border-2">
         <h2 class="text-2xl font-bold mb-4 text-center text-yellow-600">SELECT BLOG</h2>
@@ -111,7 +135,7 @@
     </div>
 
 
-    
+
 
     <!-- -------------------DROPDOWN END ----------- -->
 

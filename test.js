@@ -44,74 +44,73 @@ document.getElementById('blog-selector').addEventListener('change', function (ev
 
 // RECOMMEND BUTTON LOGIC
 async function recommendBlogs(){
-    showLoader(); // Show loader
-    try {
-        console.log("recommendBlog function called")
-        const selector = document.getElementById('blog-selector');
-        const index = selector.value;
-        if (index=== ""){
-            hideLoader();
-            return alert("Please select a blog!");
-        }
-        const blog = blogData[index];
-        console.log(`Blog = ${blog.title}`)
-        const payload = {
-            title: blog.title,
-            language: blog.language || "English",
-            category: blog.category || "General",
-            author:  blog.author || "myNachiketa",
-            read_time: blog["read_time(mins)"].toString()
-        };
-        const response = await fetch("https://blogs-books-recommend.onrender.com/recommendBlogs", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json()
-        console.log(`Showing first data received \ndata.results[0]`)
-        showBlogResults(data.results);
-    } catch (err) {
-        alert("Failed to fetch recommendations.");
-    } finally {
-        hideLoader(); // Hide loader
+    console.log("recommendBlog function called")
+    const selector = document.getElementById('blog-selector');
+    
+    const index = selector.value;
+    if (index=== ""){
+        return alert("Please select a blog!");
     }
+
+    const blog = blogData[index];
+
+    console.log(`Blog = ${blog.title}`)
+    const payload = {
+        title: blog.title,
+        language: blog.language || "English",
+        category: blog.category || "General",  // only category has null values
+        author:  blog.author || "myNachiketa",
+        read_time: blog["read_time(mins)"].toString()
+    };
+
+    const response = await fetch("https://blogs-books-recommend.onrender.com/recommendBlogs", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const data = await response.json()
+    console.log(`Showing first data received \ndata.results[0]`)
+    showBlogResults(data.results);
+
 }
 
 async function recommendBooks(){
-    showLoader(); // Show loader
-    try {
-        console.log("recommendBooks() function is called")
-        const selector = document.getElementById('blog-selector');
-        const index = selector.value;
-        if (index=== ""){
-            hideLoader();
-            return alert("Please select a blog!");
-        }
-        const blog = blogData[index]
-        console.log(`Blog = ${blog.title}`)
-        const payload = {
-            title: blog.title,
-            language: blog.language || "English",
-            category: blog.category || "General",
-            author: blog.author || "myNachiketa"
-        }
-        const response = await fetch("https://blogs-books-recommend.onrender.com/recommendBooks", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json()
-        console.log(`Data first card = {data.results[0]} `)
-        showBookResults(data.results)
-    } catch (err) {
-        alert("Failed to fetch recommendations.");
-    } finally {
-        hideLoader(); // Hide loader
+
+    console.log("recommendBooks() function is called")
+
+    const selector = document.getElementById('blog-selector');
+    const index = selector.value;
+    if (index=== ""){
+        return alert("Please select a blog!");
     }
+
+    const blog = blogData[index]
+
+    console.log(`Blog = ${blog.title}`)
+    const payload = {
+        title: blog.title,
+        language: blog.language || "English",
+        category: blog.category || "General",
+        author: blog.author || "myNachiketa"
+    }
+
+    const response = await fetch("https://blogs-books-recommend.onrender.com/recommendBooks", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const data = await response.json()
+
+    console.log(`Data first card = {data.results[0]} `)
+
+    showBookResults(data.results)
+
 }
 
 
